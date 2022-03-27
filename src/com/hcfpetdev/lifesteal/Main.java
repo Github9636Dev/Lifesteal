@@ -111,10 +111,11 @@ public class Main extends JavaPlugin {
         }
 
         int maxHeartsFromCraft = config.getInt("maxheartsfromcrafting");
+        boolean usableHearts = config.getBoolean("craftableHearts");
 
         Bukkit.getPluginManager().registerEvents(new LifeStealListener(this), this);
         Bukkit.getPluginManager().registerEvents(new CraftingListener(this),this);
-        Bukkit.getPluginManager().registerEvents(new RightClickListener(maxHeartsFromCraft),this);
+        Bukkit.getPluginManager().registerEvents(new RightClickListener(maxHeartsFromCraft, usableHearts),this);
     }
 
 }

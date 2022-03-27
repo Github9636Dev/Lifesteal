@@ -5,7 +5,7 @@ reviveCommand: revive #revive when player is at 0 hearts
 reviveHearts: 10
 withdrawHearts: withdrawheart #Leave empty if not needed
 broadcastRevive: true
-whenDead: Spectate #Specatate, Kick, None
+whenDead: Spectate #Specatate, Kick (not recommended), None
 
 crafting:
   #Format:

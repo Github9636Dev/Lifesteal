@@ -11,10 +11,12 @@ public class RightClickListener implements Listener {
 
     private ItemStack heartItem;
     private int maxHeartsFromCrafting;
+    private boolean usable;
 
-    public RightClickListener(int maxHeartsFromCrafting) {
+    public RightClickListener(int maxHeartsFromCrafting, boolean usable) {
         heartItem = Main.recipes.get("heart").getItem();
         this.maxHeartsFromCrafting = maxHeartsFromCrafting;
+        this.usable = usable;
     }
     @EventHandler
     private void onRightClick(PlayerInteractEvent event) {
@@ -25,7 +27,11 @@ public class RightClickListener implements Listener {
             event.getPlayer().sendMessage("§cError: the max amount of hearts from crafting is " + maxHeartsFromCrafting);
             return;
         }
-
+        if (!usable) {
+            event.getPlayer().sendMessage("§cError: Craftable Hearts are not enabled on this server");
+            event.setCancelled(true);
+            return;
+        }
         ItemStack stack = event.getItem();
         if (stack.getAmount()==1) event.getPlayer().setItemInHand(new ItemStack(Material.AIR));
         else {
