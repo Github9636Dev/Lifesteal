@@ -1,0 +1,7 @@
+name: Lifesteal
+version: 1
+description: >
+  A lifesteal plugin with highly customizable settings made for 1.8
+main: com.hcfpetdev.lifesteal.Main
+authors: [hcfpetdev, 9636Dev]
+website: github.com/9636dev

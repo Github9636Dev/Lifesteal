@@ -1,0 +1,60 @@
+craftableHearts: true
+maxhearts: 20
+maxheartsfromcrafting: 10
+reviveCommand: revive #revive when player is at 0 hearts
+reviveHearts: 10
+withdrawHearts: withdrawheart #Leave empty if not needed
+broadcastRevive: true
+whenDead: Spectate #Specatate, Kick, None
+
+crafting:
+  #Format:
+
+  #recipe0:
+  # name:
+  # lore:
+  # item:
+  # shapeless: true/false
+  # tag: heart_fragment
+
+  # shapeless: true
+  # material1:
+  # material2:
+  # ....
+
+  # shapeless: false
+  # line1: ***
+  # line2: *%*
+  # line3: ***
+  #               [Symbol,  Item]
+  # ingredient1: [*, DIAMOND_BLOCK]
+  # ingredient2: [%, GOLD_BLOCK]
+  # ....
+
+
+
+  recipe0:
+    name: "Heart Fragment"
+    lore: ["Fragment of the heart"]
+    item: DIRT
+    shapeless: true
+    tag: "heart_fragment"
+
+    material0: DIAMOND_BLOCK
+    material1: DIAMOND_BLOCK
+    material2: GOLD_BLOCK
+    material3: GOLD_BLOCK
+
+  recipe1:
+    name: "Heart"
+    lore: ["Right click to add a heart"]
+    item: STONE
+    shapeless: false
+    tag: "heart"
+
+    line1: " * "
+    line2: "*%*"
+    line3: " * "
+
+    ingredient0: ["*", "heart_fragment"]
+    ingredient1: ["%", "GLASS"]
