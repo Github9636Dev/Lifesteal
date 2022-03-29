@@ -5,6 +5,7 @@ import com.hcfpetdev.lifesteal.commands.WithdrawHearts;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.ShapelessRecipe;
@@ -50,12 +51,13 @@ public class Main extends JavaPlugin {
             item = new ItemStack(Material.getMaterial(config.getString(path + "item")));
             tag = config.getString(path + "tag");
 
-            if (lore.size() > 0) {
-                meta = Bukkit.getItemFactory().getItemMeta(item.getType());
-                meta.setLore(lore);
-                meta.setDisplayName(name);
-                item.setItemMeta(meta);
-            }
+            meta = Bukkit.getItemFactory().getItemMeta(item.getType());
+            if (lore.size() > 0) meta.setLore(lore);
+            meta.setDisplayName("§r" + name);
+            item.setItemMeta(meta);
+
+
+            item.addUnsafeEnchantment(Enchantment.DURABILITY,1);
 
             recipe = new CustomRecipe(item);
 
