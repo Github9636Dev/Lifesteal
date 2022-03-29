@@ -36,7 +36,7 @@ crafting:
   recipe0:
     name: "Heart Fragment"
     lore: ["Fragment of the heart"]
-    item: DIRT
+    item: DIAMOND
     shapeless: true
     tag: "heart_fragment"
 
@@ -48,7 +48,7 @@ crafting:
   recipe1:
     name: "Heart"
     lore: ["Right click to add a heart"]
-    item: STONE
+    item: EMERALD
     shapeless: false
     tag: "heart"
 
