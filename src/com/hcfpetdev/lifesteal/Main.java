@@ -1,6 +1,7 @@
 package com.hcfpetdev.lifesteal;
 
 import com.hcfpetdev.lifesteal.commands.Revive;
+import com.hcfpetdev.lifesteal.commands.WithdrawHearts;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -112,6 +113,9 @@ public class Main extends JavaPlugin {
 
         int maxHeartsFromCraft = config.getInt("maxheartsfromcrafting");
         boolean usableHearts = config.getBoolean("craftableHearts");
+        String alias = config.getString("withdrawHearts");
+
+        new WithdrawHearts(this,alias);
 
         Bukkit.getPluginManager().registerEvents(new LifeStealListener(this), this);
         Bukkit.getPluginManager().registerEvents(new CraftingListener(this),this);

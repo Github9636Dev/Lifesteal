@@ -28,10 +28,10 @@ public class LifeStealListener implements Listener {
         whenDead = instance.getConfig().getString("whenDead").toLowerCase(Locale.ROOT);
 
         deadPlayer = new ItemStack(Material.BEDROCK);
-        deadPlayer.addUnsafeEnchantment(Enchantment.DURABILITY, 1);
         ItemMeta meta = Bukkit.getItemFactory().getItemMeta(Material.BEDROCK);
         meta.setDisplayName("§7DEAD");
         deadPlayer.setItemMeta(meta);
+        deadPlayer.addUnsafeEnchantment(Enchantment.DURABILITY, 1);
 
 
         maxHealth = instance.getConfig().getInt("maxhearts");
@@ -68,7 +68,6 @@ public class LifeStealListener implements Listener {
         }
         else if (whenDead.equals("kick")) event.getPlayer().kickPlayer("You are dead on this server");
         event.setJoinMessage("§e" + event.getPlayer().getDisplayName() + " has joined the server");
-
     }
 
     @EventHandler
